@@ -7,6 +7,7 @@ namespace MVC_RunGroopWebApp.Interfaces
         Task<IEnumerable<Race>> GetAll();
 
         Task<Race> GetByIdAsync(int Id);
+        Task<Race> GetByIdAsyncNoTracking(int Id);
 
         Task<IEnumerable<Race>> GetClubByCity(string city);
 

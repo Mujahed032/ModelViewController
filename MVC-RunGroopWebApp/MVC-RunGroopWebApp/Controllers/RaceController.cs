@@ -4,6 +4,7 @@ using MVC_RunGroopWebApp.Data;
 using MVC_RunGroopWebApp.Interfaces;
 using MVC_RunGroopWebApp.Models;
 using MVC_RunGroopWebApp.ViewModels;
+using System.Reflection;
 
 namespace MVC_RunGroopWebApp.Controllers
 {
@@ -64,6 +65,62 @@ namespace MVC_RunGroopWebApp.Controllers
             }
             return View(raceVM);
            
+        }
+        public async Task<IActionResult> Edit(int Id)
+        {
+            var race = await _raceRepository.GetByIdAsync(Id);
+            if (race == null) return View("Eroor");
+
+            var raceVM = new EditRaceViewModel
+            {
+                Title = race.Title,
+                Description = race.Description,
+                AddressId = race.AddressId,
+                Address = race.Address,
+                URL = race.Image,
+                RaceCategory = race.RaceCategory
+
+            };
+            return View(raceVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id,EditRaceViewModel raceVM)
+        {
+            if(!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit the race");
+            };
+            var userRace = await _raceRepository.GetByIdAsyncNoTracking(id);
+            if(userRace!=null)
+            {
+                try
+                {
+                   await _photoService.DeletePhotoAsync(userRace.Image);
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("", "Failed to delete the photo");
+                    return View(raceVM);
+                }
+
+                var photoResult = await _photoService.AddPhotoAsync(raceVM.Image);
+                var race = new Race
+                {
+                    Id = id,
+                    Title = raceVM.Title,
+                    Description = raceVM.Description,
+                    AddressId = raceVM.AddressId,
+                    Address = raceVM.Address,
+                    Image = photoResult.Url.ToString()
+                };
+                _raceRepository.Update(race);
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return View(raceVM);
+            }
         }
     }
 }

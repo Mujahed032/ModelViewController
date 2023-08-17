@@ -65,5 +65,63 @@ namespace MVC_RunGroopWebApp.Controllers
             }
             return View(clubVM);
         }
+
+        public async Task<IActionResult> Edit(int Id)
+        {
+            var club = await _clubRepository.GetByIdAsync(Id);
+            if(club == null) return View("Error");
+
+            var clubVM = new EditClubViewModel
+            {
+                Title = club.Title,
+                Description = club.Description,
+                AddressId = club.AddressId,
+                Address = club.Address,
+                URL = club.Image,
+                ClubCategory = club.ClubCategory
+
+            };
+              return View(clubVM);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, EditClubViewModel clubVM)
+        {
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("", "Failed to edit club");
+            }
+            var userClub = await _clubRepository.GetByIdAsyncNoTracking(id);
+
+            if (userClub != null)
+            {
+                try
+                {
+                    await _photoService.DeletePhotoAsync(userClub.Image);
+                }
+                catch (Exception)
+                {
+                    ModelState.AddModelError("", "Failed to delete the photo");
+                    return View(clubVM);
+                }
+            
+            var photoResult = await _photoService.AddPhotoAsync(clubVM.Image);
+            var club = new Club
+            {
+                Id = id,
+                Title = clubVM.Title,
+                Description = clubVM.Description,
+                Image = photoResult.Url.ToString(),
+                AddressId = clubVM.AddressId,
+                Address = clubVM.Address
+            };
+            _clubRepository.Update(club);
+            return RedirectToAction("Index");
+            }
+            else
+            {
+                return View(clubVM);
+            }
+        
+       }
     }
 }
