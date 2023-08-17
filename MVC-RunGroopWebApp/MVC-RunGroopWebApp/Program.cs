@@ -1,7 +1,10 @@
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MVC_RunGroopWebApp.Data;
+using MVC_RunGroopWebApp.Helpers;
 using MVC_RunGroopWebApp.Interfaces;
 using MVC_RunGroopWebApp.Repository;
+using MVC_RunGroopWebApp.Services;
 
 namespace MVC_RunGroopWebApp
 {
@@ -15,6 +18,8 @@ namespace MVC_RunGroopWebApp
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<IClubRepository, ClubRepository>();
             builder.Services.AddScoped<IRaceRepository, RaceRepository>();
+            builder.Services.AddScoped<IPhotoService, PhotoService>();
+            builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySettings"));
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));

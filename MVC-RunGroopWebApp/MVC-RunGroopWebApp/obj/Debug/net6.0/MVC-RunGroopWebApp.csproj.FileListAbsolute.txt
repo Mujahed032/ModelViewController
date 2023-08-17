@@ -64,3 +64,5 @@ C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-Run
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\obj\Debug\net6.0\MVC-RunGroopWebApp.pdb
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\obj\Debug\net6.0\MVC-RunGroopWebApp.genruntimeconfig.cache
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\obj\Debug\net6.0\ref\MVC-RunGroopWebApp.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\CloudinaryDotNet.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Newtonsoft.Json.dll
