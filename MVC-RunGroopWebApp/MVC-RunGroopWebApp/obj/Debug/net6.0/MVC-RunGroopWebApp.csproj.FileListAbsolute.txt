@@ -66,3 +66,8 @@ C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-Run
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\obj\Debug\net6.0\ref\MVC-RunGroopWebApp.dll
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\CloudinaryDotNet.dll
 C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\hp\OneDrive\Documents\Visual Studio 2022\MVC\MVC-RunGroopWebApp\MVC-RunGroopWebApp\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

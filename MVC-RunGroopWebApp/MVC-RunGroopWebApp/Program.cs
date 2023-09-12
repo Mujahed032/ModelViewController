@@ -1,17 +1,15 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MVC_RunGroopWebApp.Data;
 using MVC_RunGroopWebApp.Helpers;
 using MVC_RunGroopWebApp.Interfaces;
+using MVC_RunGroopWebApp.Models;
 using MVC_RunGroopWebApp.Repository;
 using MVC_RunGroopWebApp.Services;
 
-namespace MVC_RunGroopWebApp
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -24,12 +22,18 @@ namespace MVC_RunGroopWebApp
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+            builder.Services.AddIdentity<AppUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie();
 
             var app = builder.Build();
             if (args.Length == 1 && args[0].ToLower() == "seeddata")
             {
-                //await Seed.SeedUsersAndRolesAsync(app);
-                Seed.SeedData(app);
+                await Seed.SeedUsersAndRolesAsync(app);
+                //Seed.SeedData(app);
             }
 
             // Configure the HTTP request pipeline.
@@ -52,6 +56,3 @@ namespace MVC_RunGroopWebApp
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
             app.Run();
-        }
-    }
-}
