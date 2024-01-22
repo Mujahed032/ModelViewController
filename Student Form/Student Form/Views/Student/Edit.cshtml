@@ -1,0 +1,120 @@
+﻿@model Student_Form.Models.Student
+
+<h2>Edit Student</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="StudentName" class="control-label"></label>
+        <input asp-for="StudentName" class="form-control" />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender" class="control-label"></label>
+        <select asp-for="Gender" class="form-control">
+             <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateOfBirth" class="control-label"></label>
+        <input asp-for="DateOfBirth" class="form-control" type="date" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password" class="control-label"></label>
+        <input asp-for="Password" class="form-control" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmPassword" class="control-label"></label>
+        <input asp-for="ConfirmPassword" class="form-control" type="password" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label"></label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <!-- Hobbies -->
+    <div class="form-group">
+        <label asp-for="Hobbies" class="control-label">Hobbies</label>
+        <select asp-for="Hobbies" class="form-control">
+             <option value="">Select</option>
+            <option value="Music">Music</option>
+            <option value="Movies">Movies</option>
+            <option value="Sports">Sports</option>
+            <option value="Travel">Travel</option>
+        </select>
+    </div>
+
+  
+    <div class="form-group">
+        <label asp-for="Course" class="control-label">Course</label>
+        <select asp-for="Course" class="form-control">
+             <option value="">Select</option>
+            <option value="Btech">Btech</option>
+            <option value="MBBS">MBBS</option>
+            <option value="Bcom">Bcom</option>
+        </select>
+    </div>
+
+    
+    <h3>Permanent Address</h3>
+    <div class="form-group">
+        <label asp-for="PermanentAddress.State" class="control-label"></label>
+        <input asp-for="PermanentAddress.State" class="form-control" />
+        <span asp-validation-for="PermanentAddress.State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PermanentAddress.City" class="control-label"></label>
+        <input asp-for="PermanentAddress.City" class="form-control" />
+        <span asp-validation-for="PermanentAddress.City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PermanentAddress.Street" class="control-label"></label>
+        <input asp-for="PermanentAddress.Street" class="form-control" />
+        <span asp-validation-for="PermanentAddress.Street" class="text-danger"></span>
+    </div>
+
+   
+    <h3>Current Address</h3>
+    <div class="form-group">
+        <label asp-for="CurrentAddress.State" class="control-label"></label>
+        <input asp-for="CurrentAddress.State" class="form-control" />
+        <span asp-validation-for="CurrentAddress.State" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentAddress.City" class="control-label"></label>
+        <input asp-for="CurrentAddress.City" class="form-control" />
+        <span asp-validation-for="CurrentAddress.City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CurrentAddress.Street" class="control-label"></label>
+        <input asp-for="CurrentAddress.Street" class="form-control" />
+        <span asp-validation-for="CurrentAddress.Street" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+

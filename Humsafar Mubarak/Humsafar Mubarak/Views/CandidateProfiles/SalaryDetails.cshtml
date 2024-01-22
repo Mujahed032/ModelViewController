@@ -1,0 +1,28 @@
+﻿@using Humsafar_Mubarak.Data.Enum;
+@using Humsafar_Mubarak.ViewModel
+@model SalaryDetails
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Currency">Currency</label>
+        <input asp-for="Currency" class="form-control" placeholder="Currency">
+        <span asp-validation-for="Currency" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalaryAmount">SalaryAmount</label>
+        <input asp-for="SalaryAmount" class="form-control" placeholder="SalaryAmount">
+        <span asp-validation-for="SalaryAmount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SalaryFrequency">SalaryFrequency</label>
+        <select asp-for="SalaryFrequency" asp-items="@Html.GetEnumSelectList<SalaryFrequency>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="SalaryFrequency" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

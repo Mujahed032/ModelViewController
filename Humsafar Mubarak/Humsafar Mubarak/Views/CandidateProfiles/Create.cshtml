@@ -1,0 +1,103 @@
+﻿@using Humsafar_Mubarak.ViewModel
+@using Humsafar_Mubarak.Data.Enum
+@model ProfileViewModel
+
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+    
+    <div class="form-group">
+        <label asp-for="Person.FirstName">FirstName</label>
+        <input asp-for="Person.FirstName" class="form-control" placeholder="FirstName">
+        <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Person.LastName">LastName</label>
+        <input asp-for="Person.LastName" class="form-control" placeholder="LastName">
+        <span asp-validation-for="Person.LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Person.Relation">Relation</label>
+        <select asp-for="Person.Relation" asp-items="@Html.GetEnumSelectList<RelationToCandidate>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Person.Relation" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Age">Age</label>
+        <input asp-for="Age" class="form-control" placeholder="Age">
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" class="form-control" placeholder="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Weight">Weight</label>
+        <input asp-for="Weight" class="form-control" placeholder="Weight">
+        <span asp-validation-for="Weight" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Height">Height</label>
+        <input asp-for="Height" class="form-control" placeholder="Height">
+        <span asp-validation-for="Height" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BodyType">BodyType</label>
+        <input asp-for="BodyType" class="form-control" placeholder="BodyType">
+        <span asp-validation-for="BodyType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Complexion">Complextion</label>
+        <input asp-for="Complexion" class="form-control" placeholder="Complexion">
+        <span asp-validation-for="Complexion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateOfBirth">DateOfBirth</label>
+        <input asp-for="DateOfBirth" class="form-control" placeholder="DateOfBirth">
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Diet">Diet</label>
+        <input asp-for="Diet" class="form-control" placeholder="Diet">
+        <span asp-validation-for="Diet" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaritalStatus">MartialStatus</label>
+        <select asp-for="MaritalStatus" asp-items="@Html.GetEnumSelectList<MaritalStatus>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Personality">Personality</label>
+        <input asp-for="Personality" class="form-control" placeholder="Diet">
+        <span asp-validation-for="Personality" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhotoTag">PhotoTag</label>
+        <input asp-for="PhotoTag" class="form-control" placeholder="Diet">
+        <span asp-validation-for="PhotoTag" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Religion">Religion</label>
+        <select asp-for="Religion" asp-items="@Html.GetEnumSelectList<Religion>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Religion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Gender">Gender</label>
+        <select asp-for="Gender" asp-items="@Html.GetEnumSelectList<Gender>()" class="form-control">
+            <option>--Select--</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="Image">Image</label>
+        <input asp-for="Image" type="file" class="form-control" placeholder="Image">
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

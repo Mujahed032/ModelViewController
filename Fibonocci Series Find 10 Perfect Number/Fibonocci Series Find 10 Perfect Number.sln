@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fibonocci Series Find 10 Perfect Number", "Fibonocci Series Find 10 Perfect Number\Fibonocci Series Find 10 Perfect Number.csproj", "{4EE41691-A928-4563-9618-A8AC4DC296BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EE41691-A928-4563-9618-A8AC4DC296BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE41691-A928-4563-9618-A8AC4DC296BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE41691-A928-4563-9618-A8AC4DC296BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE41691-A928-4563-9618-A8AC4DC296BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D779CBFF-61B4-4FF5-A4C4-81B7C69868E0}
+	EndGlobalSection
+EndGlobal

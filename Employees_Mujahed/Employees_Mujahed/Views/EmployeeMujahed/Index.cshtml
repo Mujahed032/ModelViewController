@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EmployeesMujahed>
+@{
+    ViewData["Title"] = "Employee List";
+}
+    
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Salary</td>
+            <td>DateOfBirth</td>
+            <td>Designation</td>
+        </tr>
+    </thead>
+    <tbody>
+         @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.Salary</td>
+                <td>@item.DateOfBirth.ToString("dd-mm-yyyy")</td>
+                <td>@item.Designation</td>
+                <td><a href="EmployeeMujahed/Edit/@item.Id">Edit</a></td>
+                <td><a href="EmployeeMujahed/Delete/@item.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

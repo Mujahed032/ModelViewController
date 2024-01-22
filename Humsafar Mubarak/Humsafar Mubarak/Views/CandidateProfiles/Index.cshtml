@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CandidateProfile>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4">
+                    <a href="c:\users\hp\onedrive\documents\visual studio 2022\mvc\mvc-rungroopwebapp\mvc-rungroopwebapp\views\club\index.cshtml">c:\users\hp\onedrive\documents\visual studio 2022\mvc\mvc-rungroopwebapp\mvc-rungroopwebapp\views\club\index.cshtml</a>
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="@item.Image" width="100%" height="225" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">@item.Gender</p>
+                            <p class="card-text">@item.Description</p>
+                            <p class="card-text">@item.PhotoTag</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a asp-controller="CandidateProfiles" asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">View</a>
+                                    <a asp-controller="CandidateProfiles" asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                                    <a asp-controller="CandidateProfiles" asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                                </div>
+                                <small class="text-muted">@item.Age</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
